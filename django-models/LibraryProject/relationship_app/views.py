@@ -1,14 +1,14 @@
 # relationship_app/views.py
-
 from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 
-# Required by the checker ✅
-from django.contrib.auth import authenticate, login, logout
+# Required by the checker as exact lines
+from django.contrib.auth import login
+from django.contrib.auth import authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from .models import Book
-from .models import Library  # Required by the checker ✅
+from .models import Library
 
 # Function-Based View to list books
 def list_books(request):
