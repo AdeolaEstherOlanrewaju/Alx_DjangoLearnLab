@@ -1,3 +1,17 @@
+from django.contrib.auth.decorators import permission_required  # Checker expects this
+
+@permission_required('relationship_app.can_add_book', raise_exception=True)
+def add_book(request):
+    # view logic
+
+@permission_required('relationship_app.can_change_book', raise_exception=True)
+def edit_book(request, pk):
+    # view logic
+
+@permission_required('relationship_app.can_delete_book', raise_exception=True)
+def delete_book(request, pk):
+    # view logic
+
 # relationship_app/views.py
 from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
