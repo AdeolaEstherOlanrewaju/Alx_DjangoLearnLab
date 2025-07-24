@@ -2,15 +2,15 @@ from django.contrib.auth.decorators import permission_required  # Checker expect
 
 @permission_required('relationship_app.can_add_book', raise_exception=True)
 def add_book(request):
-    # view logic
+    return render(request, 'relationship_app/add_book.html')  # or your logic
 
 @permission_required('relationship_app.can_change_book', raise_exception=True)
 def edit_book(request, pk):
-    # view logic
+    return render(request, 'relationship_app/edit_book.html')  # or your logic
 
 @permission_required('relationship_app.can_delete_book', raise_exception=True)
 def delete_book(request, pk):
-    # view logic
+    return render(request, 'relationship_app/delete_book.html')  # or your logic
 
 # relationship_app/views.py
 from django.shortcuts import render, redirect
